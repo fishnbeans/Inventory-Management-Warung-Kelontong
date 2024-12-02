@@ -1,0 +1,13 @@
+{% extends "inventoryApp/layout.html" %}
+
+{% block title %} Delete Product {% endblock title %}
+
+{% block content %}
+<h1 class="text-center">Apakah Anda Yakin Ingin Menghapus Data Penjualan Ini? </h1>
+<p class="text-center" style="font-size: 20px;">Data Produk Yang Sudah Dihapus Tidak Bisa Dikembalikan</p>
+<form method="post" class="text-center">
+    {% csrf_token %}
+    <button type="submit" class="btn btn-danger">Ya</button>
+    <a href="{% url 'penjualan_list' %}" class="btn btn-secondary">Cancel</a>
+</form>
+{% endblock content %}
